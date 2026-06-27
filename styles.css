@@ -142,7 +142,7 @@ button {
   align-items: center;
   gap: 14px 24px;
   width: 100%;
-  max-width: 920px;
+  max-width: 1060px;
   margin: 0 0 30px;
   padding: 14px 18px;
   border: 1px solid rgba(216, 222, 211, 0.84);
@@ -170,6 +170,10 @@ button {
 
 .jst-logo {
   max-width: 220px;
+}
+
+.eccv-logo {
+  max-width: 150px;
 }
 
 .venue,
@@ -908,6 +912,10 @@ h3 {
 
   .jst-logo {
     max-width: 150px;
+  }
+
+  .eccv-logo {
+    max-width: 96px;
   }
 
   .subtitle {
