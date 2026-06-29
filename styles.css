@@ -282,6 +282,23 @@ h3 {
   font-size: 15px;
 }
 
+.affiliation a,
+.site-footer a {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 125, 117, 0.34);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.affiliation a:hover,
+.affiliation a:focus-visible,
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--teal);
+  text-decoration-color: currentColor;
+  outline: none;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
