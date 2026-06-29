@@ -151,6 +151,19 @@ button {
   box-shadow: 0 14px 42px rgba(48, 37, 25, 0.08);
 }
 
+.partner-link {
+  display: block;
+  flex: 0 1 auto;
+  max-width: 100%;
+  border-radius: 6px;
+}
+
+.partner-link:hover,
+.partner-link:focus-visible {
+  outline: 2px solid rgba(0, 125, 117, 0.34);
+  outline-offset: 4px;
+}
+
 .partner-logo {
   display: block;
   flex: 0 1 auto;
@@ -231,6 +244,36 @@ h3 {
   color: #38342e;
   font-size: 17px;
   font-weight: 620;
+}
+
+.author-entry {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.orcid-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #a6ce39;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 850;
+  line-height: 1;
+  text-shadow: none;
+  transform: translateY(1px);
+}
+
+.orcid-link:hover,
+.orcid-link:focus-visible {
+  background: #8ab82e;
+  outline: 2px solid rgba(166, 206, 57, 0.42);
+  outline-offset: 2px;
 }
 
 .affiliation {
