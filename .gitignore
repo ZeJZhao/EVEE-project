@@ -3,3 +3,8 @@ Thumbs.db
 *.swp
 *.tmp
 *.log
+
+# Local visual-editor metadata and backups
+_pgbackup/
+_pginfo/
+pinegrow.json
