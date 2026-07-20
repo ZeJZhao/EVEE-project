@@ -53,36 +53,38 @@ button {
 }
 
 .hero {
+  --hero-art-height: calc(100vw * 819 / 1921);
+  --hero-content-gap: 30px;
   position: relative;
   display: grid;
   min-height: 0;
-  aspect-ratio: 1581 / 672;
+  aspect-ratio: auto;
   align-items: stretch;
   overflow: hidden;
-  padding: clamp(26px, 3vw, 52px) clamp(28px, 4vw, 72px);
-  background: #dceafb;
+  padding: calc(var(--hero-art-height) + var(--hero-content-gap)) clamp(28px, 4vw, 72px) 44px;
+  background:
+    linear-gradient(180deg, #dceafb 0 var(--hero-art-height), #123f70 var(--hero-art-height), #092a4d 100%);
   isolation: isolate;
 }
 
 .hero-bg,
 .hero-overlay {
   position: absolute;
-  inset: 0;
+  inset: 0 0 auto;
+  height: var(--hero-art-height);
 }
 
 .hero-bg {
   z-index: -2;
   background-image: url("assets/Gemini_Generated_Image_y9njt3y9njt3y9nj_bg-matched.png");
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% auto;
 }
 
 .hero-overlay {
   z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(220, 235, 252, 0.22) 0%, rgba(220, 235, 252, 0.06) 38%, transparent 62%),
-    linear-gradient(0deg, rgba(7, 37, 73, 0.12) 0%, transparent 38%);
+  background: linear-gradient(180deg, transparent 70%, rgba(9, 42, 77, 0.24) 100%);
   pointer-events: none;
 }
 
@@ -90,15 +92,15 @@ button {
   position: relative;
   display: grid;
   grid-template-areas:
-    "logos space"
-    "copy space";
-  grid-template-columns: minmax(390px, 620px) minmax(90px, 1fr);
-  grid-template-rows: auto 1fr;
+    "logos"
+    "copy";
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
   gap: clamp(12px, 1.5vw, 24px);
   align-items: start;
   width: 100%;
   max-width: 1480px;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
 }
 
@@ -106,7 +108,7 @@ button {
   grid-area: copy;
   align-self: start;
   min-width: 0;
-  max-width: 620px;
+  max-width: none;
   padding: clamp(18px, 2vw, 30px);
   border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 18px;
@@ -127,7 +129,7 @@ button {
   gap: clamp(10px, 1.15vw, 18px);
   width: fit-content;
   min-width: 0;
-  max-width: 620px;
+  max-width: 100%;
   margin: 0;
   padding: 10px 14px;
   border: 1px solid rgba(255, 255, 255, 0.76);
@@ -233,12 +235,14 @@ h3 {
 
 .subtitle {
   width: 100%;
-  max-width: 580px;
+  max-width: none;
   margin: 14px 0 0;
   color: #142f50;
   font-size: clamp(19px, 1.85vw, 28px);
   font-weight: 780;
   line-height: 1.08;
+  overflow-wrap: normal;
+  white-space: normal;
 }
 
 .authors,
@@ -273,6 +277,46 @@ h3 {
   line-height: 1;
   text-shadow: none;
   transform: translateY(1px);
+}
+
+@media (min-width: 1101px) {
+  .hero-content {
+    grid-template-areas: "copy logos";
+    grid-template-columns: minmax(0, 1fr) clamp(220px, 17vw, 270px);
+    grid-template-rows: auto;
+    gap: clamp(24px, 3vw, 48px);
+  }
+
+  .partner-logos {
+    display: grid;
+    width: 100%;
+    max-width: none;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .partner-link {
+    display: flex;
+    width: 100%;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border: 1px solid rgba(16, 59, 109, 0.1);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .partner-logo,
+  .robotics-logo,
+  .chiba-logo,
+  .jst-logo,
+  .eccv-logo {
+    width: 100%;
+    max-width: 100%;
+    height: 36px;
+    object-fit: contain;
+  }
 }
 
 .orcid-link:hover,
@@ -1961,49 +2005,6 @@ h3 {
   cursor: pointer;
 }
 
-@media (max-width: 1100px) {
-  .hero {
-    aspect-ratio: auto;
-    padding-top: calc(100vw * 672 / 1581 + 30px);
-    padding-bottom: 44px;
-    background:
-      linear-gradient(180deg, #dceafb 0 calc(100vw * 672 / 1581), #123f70 calc(100vw * 672 / 1581), #092a4d 100%);
-  }
-
-  .hero-bg,
-  .hero-overlay {
-    bottom: auto;
-    height: calc(100vw * 672 / 1581);
-  }
-
-  .hero-bg {
-    background-position: top center;
-    background-size: 100% auto;
-  }
-
-  .hero-overlay {
-    background: linear-gradient(180deg, transparent 70%, rgba(9, 42, 77, 0.24) 100%);
-  }
-
-  .hero-content {
-    grid-template-areas:
-      "logos"
-      "copy";
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    height: auto;
-  }
-
-  .hero-copy {
-    max-width: none;
-  }
-
-  .partner-logos {
-    width: fit-content;
-    max-width: 100%;
-  }
-}
-
 @media (max-width: 900px) {
   .hero,
   .section,
@@ -2116,8 +2117,8 @@ h3 {
 
 @media (max-width: 620px) {
   .hero {
+    --hero-content-gap: 22px;
     min-height: 0;
-    padding-top: calc(100vw * 672 / 1581 + 22px);
     padding-bottom: 34px;
   }
 
@@ -2180,7 +2181,7 @@ h3 {
   }
 
   .subtitle {
-    font-size: 20px;
+    font-size: clamp(17px, 4.75vw, 20px);
     width: 100%;
     max-width: none;
     line-height: 1.12;
