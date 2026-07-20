@@ -97,7 +97,7 @@ button {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto;
   gap: clamp(12px, 1.5vw, 24px);
-  align-items: start;
+  align-items: stretch;
   width: 100%;
   max-width: 1480px;
   height: auto;
@@ -106,7 +106,7 @@ button {
 
 .hero-copy {
   grid-area: copy;
-  align-self: start;
+  align-self: stretch;
   min-width: 0;
   max-width: none;
   padding: clamp(18px, 2vw, 30px);
@@ -123,25 +123,31 @@ button {
 
 .partner-logos {
   grid-area: logos;
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: center;
   gap: clamp(10px, 1.15vw, 18px);
-  width: fit-content;
+  width: 100%;
   min-width: 0;
   max-width: 100%;
   margin: 0;
   padding: 10px 14px;
   border: 1px solid rgba(255, 255, 255, 0.76);
-  border-radius: 14px;
-  background: rgba(250, 253, 255, 0.88);
-  box-shadow: 0 14px 40px rgba(8, 37, 73, 0.15);
-  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(249, 252, 255, 0.94), rgba(230, 241, 253, 0.84));
+  box-shadow:
+    0 24px 70px rgba(8, 37, 73, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(14px) saturate(1.08);
 }
 
 .partner-link {
-  display: block;
-  flex: 0 1 auto;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
   max-width: 100%;
   border-radius: 6px;
 }
@@ -287,11 +293,16 @@ h3 {
     gap: clamp(24px, 3vw, 48px);
   }
 
+  .hero-copy,
   .partner-logos {
-    display: grid;
+    height: 100%;
+  }
+
+  .partner-logos {
     width: 100%;
     max-width: none;
     grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: repeat(4, minmax(0, 1fr));
     gap: 12px;
     padding: 12px;
   }
@@ -2155,7 +2166,7 @@ h3 {
   .partner-logos {
     width: 100%;
     max-width: none;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px 14px;
     padding: 12px;
   }
