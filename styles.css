@@ -554,7 +554,17 @@ h3 {
   font-size: 18px;
 }
 
-.abstract-copy p,
+.abstract-copy p {
+  margin: 0;
+  overflow-wrap: normal;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  hyphenate-limit-chars: 6 3 3;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .resource-copy {
   margin: 0;
 }
