@@ -1,3 +1,24 @@
+const codeButton = document.querySelector("[data-code-button]");
+const codeRelease = window.EVEE_SITE_CONFIG || {};
+
+if (codeButton && codeRelease.codeReleased === true && codeRelease.codeUrl) {
+  codeButton.textContent = "Code";
+  codeButton.href = codeRelease.codeUrl;
+  codeButton.target = "_blank";
+  codeButton.rel = "noopener";
+  codeButton.classList.remove("button-disabled");
+  codeButton.removeAttribute("aria-disabled");
+  codeButton.removeAttribute("tabindex");
+} else if (codeButton) {
+  codeButton.textContent = "Coming soon";
+  codeButton.removeAttribute("href");
+  codeButton.removeAttribute("target");
+  codeButton.removeAttribute("rel");
+  codeButton.classList.add("button-disabled");
+  codeButton.setAttribute("aria-disabled", "true");
+  codeButton.tabIndex = -1;
+}
+
 const lightbox = document.querySelector(".lightbox");
 const lightboxImage = lightbox?.querySelector("img");
 const closeButton = lightbox?.querySelector(".lightbox-close");

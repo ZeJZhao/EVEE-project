@@ -9,14 +9,14 @@
       content="Project page for EVEE, an ECCV 2026 event-based online adaptation framework for unknown-target local feature matching."
     >
     <meta property="og:title" content="EVEE">
-    <meta name="build-version" content="2026-07-20-natural-card-headings-v18">
+    <meta name="build-version" content="2026-07-20-code-release-toggle-v19">
     <meta
       property="og:description"
       content="Event-based online adaptation for matching on unknown targets."
     >
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/Gemini_Generated_Image_y9njt3y9njt3y9nj_bg-matched.png">
-    <link rel="stylesheet" href="styles.css?v=20260720-natural-card-headings-v18">
+    <link rel="stylesheet" href="styles.css?v=20260720-code-release-toggle-v19">
   </head>
   <body>
     <main id="top">
@@ -105,7 +105,7 @@
               <a href="https://www.chiba-u.ac.jp/" target="_blank" rel="noopener">Chiba University</a>
             </p>
             <div class="hero-actions" aria-label="Project links">
-              <a class="button primary" href="https://github.com/ZeJZhao/EVEE" target="_blank" rel="noopener">Code</a>
+              <a class="button primary button-disabled" data-code-button aria-disabled="true">Coming soon</a>
               <a class="button" href="#paper">Paper</a>
               <a class="button" href="#citation">Citation</a>
             </div>
@@ -690,6 +690,12 @@
       <img alt="">
     </dialog>
 
-    <script src="script.js?v=20260715-carousel-v2"></script>
+    <script>
+      window.EVEE_SITE_CONFIG = {
+        codeReleased: true,
+        codeUrl: "https://github.com/ZeJZhao/EVEE"
+      };
+    </script>
+    <script src="script.js?v=20260720-code-release-toggle-v1"></script>
   </body>
 </html>
