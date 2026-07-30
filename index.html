@@ -9,20 +9,36 @@
       content="Project page for EVEE, an ECCV 2026 event-based online adaptation framework for unknown-target local feature matching."
     >
     <meta property="og:title" content="EVEE">
-    <meta name="build-version" content="2026-07-20-code-release-toggle-v19">
+    <meta name="build-version" content="2026-07-30-compact-rhythm-v25">
     <meta
       property="og:description"
       content="Event-based online adaptation for matching on unknown targets."
     >
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/Gemini_Generated_Image_y9njt3y9njt3y9nj_bg-matched.png">
-    <link rel="stylesheet" href="styles.css?v=20260720-code-release-toggle-v19">
+    <link rel="stylesheet" href="styles.css?v=20260730-compact-rhythm-v25">
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"><span data-scroll-progress></span></div>
+
     <main id="top">
+      <div class="page-decor" aria-hidden="true">
+        <div class="page-paws">
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span>
+        </div>
+        <div class="page-orbits">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-bg" role="img" aria-label="A glowing Eevee silhouette in front of the Chiba city skyline"></div>
-        <div class="hero-overlay"></div>
+        <div class="hero-atmosphere" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div class="hero-content">
           <div class="partner-logos" aria-label="Affiliated institutions and funding program">
             <a
@@ -106,7 +122,8 @@
             </p>
             <div class="hero-actions" aria-label="Project links">
               <a class="button primary button-disabled" data-code-button aria-disabled="true">Coming soon</a>
-              <a class="button" href="#paper">Paper</a>
+<!--              <a class="button primary" target="_blank" rel="noopener">Code</a>-->
+              <a class="button button-disabled" data-paper-button aria-disabled="true">Coming soon</a>
               <a class="button" href="#citation">Citation</a>
             </div>
           </div>
@@ -614,39 +631,6 @@
         </div>
       </section>
 
-      <section id="resources" class="section">
-        <div class="section-inner resources-layout">
-          <div>
-            <p class="eyebrow">Resources</p>
-            <h2>Project materials</h2>
-            <p class="resource-copy">
-              The code release includes the inference pipeline, pretrained-weight layout, example
-              data instructions, and reproducible output format. Paper PDF and final metadata will
-              be linked here after the camera-ready version is fixed.
-            </p>
-          </div>
-          <div class="resource-list">
-            <a class="resource-item" href="https://github.com/ZeJZhao/EVEE" target="_blank" rel="noopener">
-              <span>Code</span>
-              <strong>github.com/ZeJZhao/EVEE</strong>
-            </a>
-            <a
-              class="resource-item"
-              href="https://drive.google.com/file/d/1F-iJIufyu1hAT6YF5yItMk2IVsPeLPzG/view?usp=drive_link"
-              target="_blank"
-              rel="noopener"
-            >
-              <span>Example Data</span>
-              <strong>Google Drive dataset package</strong>
-            </a>
-            <a id="paper" class="resource-item" href="#citation">
-              <span>Paper</span>
-              <strong>Coming soon at ECCV 2026.</strong>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section id="acknowledgements" class="section acknowledgements-section">
         <div class="section-inner">
           <div class="section-heading">
@@ -667,12 +651,17 @@
             <p class="eyebrow">Citation</p>
             <h2>Cite EVEE</h2>
           </div>
-          <pre class="bibtex"><code>@inproceedings{evee2026,
+          <div class="citation-card">
+            <button class="citation-copy" type="button" data-copy-citation aria-live="polite">
+              Copy BibTeX
+            </button>
+            <pre class="bibtex"><code>@inproceedings{evee2026,
   title     = {EVEE: Event-Based Online Adaptation for Matching on Unknown Targets},
   author    = {Zhao, Zejing and Ju, Cheng and Zhang, Yanwen and Namiki, Akio},
   booktitle = {European Conference on Computer Vision},
   year      = {2026}
 }</code></pre>
+          </div>
         </div>
       </section>
     </main>
@@ -685,6 +674,10 @@
       </span>
     </footer>
 
+    <a class="back-to-top" href="#top" data-back-to-top aria-label="Back to top">
+      <span aria-hidden="true">&#8593;</span>
+    </a>
+
     <dialog class="lightbox" aria-label="Expanded figure">
       <button class="lightbox-close" type="button" aria-label="Close expanded figure">x</button>
       <img alt="">
@@ -693,9 +686,11 @@
     <script>
       window.EVEE_SITE_CONFIG = {
         codeReleased: true,
-        codeUrl: "https://github.com/ZeJZhao/EVEE"
+        codeUrl: "https://github.com/ZeJZhao/EVEE",
+        paperReleased: false,
+        paperUrl: ""
       };
     </script>
-    <script src="script.js?v=20260720-code-release-toggle-v1"></script>
+    <script src="script.js?v=20260730-drum-scroll-v5"></script>
   </body>
 </html>
