@@ -1,5 +1,6 @@
 const codeButton = document.querySelector("[data-code-button]");
 const paperButton = document.querySelector("[data-paper-button]");
+const videoButton = document.querySelector("[data-video-button]");
 const siteConfig = window.EVEE_SITE_CONFIG || {};
 
 const configureReleaseButton = (button, released, url, label) => {
@@ -16,7 +17,7 @@ const configureReleaseButton = (button, released, url, label) => {
     return;
   }
 
-  button.textContent = "Coming soon";
+  button.textContent = "Paper (Coming soon)";
   button.removeAttribute("href");
   button.removeAttribute("target");
   button.removeAttribute("rel");
@@ -30,6 +31,12 @@ configureReleaseButton(
   siteConfig.codeReleased,
   siteConfig.codeUrl,
   "Code",
+);
+configureReleaseButton(
+  videoButton,
+  siteConfig.videoReleased,
+  siteConfig.videoUrl,
+  "Video",
 );
 configureReleaseButton(
   paperButton,
